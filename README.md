@@ -22,6 +22,6 @@ pip install selenium
    🔰 At line 24 replace ```<Browser_name>``` with Your Browser name (Note: First letter of Browser name must be capital).<br>
    🔰 In your semester if you have only 5 thoery subjects and 4 practical subjects, you're good to go, continue with step 6.
    🛑Note: If you have more than 9 subjects in your semester you have to modify some URLs from line 62, and you have change the code accordingly, suppose if you have 10 subjects in your semester, already 9 subjects are added in the code now you have to create a new variable ```sub_10``` at line 63 and copy paste the same content from above line, but change number 13 to 14 in that URL. once you do that now you have to update the number at line 65 (change value in url from 14 to 15) and line 68 (change value in url from 15 to 16), and you have to update the line 71 too. 
-6. Now Save the main.py file.
-7. Then execute main.py file.
+7. Now Save the main.py file.
+8. Then execute main.py file.
 Done!
