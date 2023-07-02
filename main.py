@@ -1,7 +1,7 @@
 import csv
 import time
 from selenium import webdriver
-from selenium.webdriver.firefox.service import Service
+from selenium.webdriver.<your_browser_name>.service import Service
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support.ui import Select
 from selenium.common.exceptions import NoSuchElementException
@@ -10,8 +10,9 @@ filename = "./result.csv"
 droppers_list = [] # list for storing uneligible pin numbers
 start_roll_no = 1
 end_roll_no = 131
-branch_code = 'CM'
-clg_code = '20158'
+branch_code = '<your_branch_code>' # ex: CM, EE, EC, etc..
+clg_code = '<batch_code>' # ex: 20158, 21105, etc..
+path = "<driver_path>" # ex: "C:\xyz\geckodriver.exe"
 with open(filename, "w+") as f:
 	header = "PIN,501,502,503,504,505,506,507,508,509,TOTAL,STATUS\n"
 	f.write(header)
@@ -19,11 +20,14 @@ with open(filename, "w+") as f:
 for i in range(start_roll_no, end_roll_no + 1):
 	try:
 		# create instance of Chrome webdriver
-		firefox_services = Service(executable_path="C:/SWSetup/geckodriver.exe")
-		driver = webdriver.Firefox(service = firefox_services)
-		# driver.get("https://sbtetuat.ap.gov.in/APSBTET/results.do")
+		services = Service(executable_path=path)
+		driver = webdriver.<Browser_name>(service = services)
+		
 		driver.minimize_window() #to minimize the window when a selenium session is created
-		driver.get("https://sbtet1.ap.gov.in/APSBTET/results.xls")
+
+		# to open a web page
+		driver.get("https://sbtet1.ap.gov.in/APSBTET/results.xls") # if this link is not working, use the following url
+		# driver.get("https://sbtetuat.ap.gov.in/APSBTET/results.do")
 
 		if i<10:
 			tv = clg_code+'-'+branch_code+'-00'+str(i)
@@ -46,7 +50,7 @@ for i in range(start_roll_no, end_roll_no + 1):
 		pin = driver.find_element('xpath', '/html/body/div[3]/div/div/div[2]/div/form/table/tbody/tr[1]/td[1]').text
 		#name=driver.find_element('xpath', '/html/body/div[3]/div/div/div[2]/div/form/table/tbody/tr[2]/td').text
 		
-		#SEBJECTS 501 to 509
+		#SEBJECTS 501 to 509, change the no.of subjects according to your branch and semester
 		sub_1 = driver.find_element('xpath', '/html/body/div[3]/div/div/div[2]/div/form/table/tbody/tr[5]/td[1]').text
 		sub_2 = driver.find_element('xpath', '/html/body/div[3]/div/div/div[2]/div/form/table/tbody/tr[6]/td[1]').text
 		sub_3 = driver.find_element('xpath', '/html/body/div[3]/div/div/div[2]/div/form/table/tbody/tr[7]/td[1]').text
@@ -59,6 +63,7 @@ for i in range(start_roll_no, end_roll_no + 1):
 		
 		# TOTAL MARKS
 		total = driver.find_element('xpath', '/html/body/div[3]/div/div/div[2]/div/form/table/tbody/tr[14]/td').text
+		
 		# STATUS PASS/FAIL
 		status=driver.find_element('xpath', '/html/body/div[3]/div/div/div[2]/div/form/table/tbody/tr[15]/td').text
 		
