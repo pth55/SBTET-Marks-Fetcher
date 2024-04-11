@@ -1,27 +1,41 @@
-# About the Project
+# SBETET_MARKS_FETCHER
+
+## About the Project
+
 This Program will automatically fetches all the results of a class, this program built with Selenium framework...
 
 ## Steps to Use this Program
-1. Download the latest version of Python along with selenium library using PIP as follows
-```python
-pip install selenium
-```
-2. Now Based on the Browser that you are currently using, Download the latest version of selenium webdriver (every web browser have its own selenium driver) from below links.<br>
-   Download Drivers from here 👇</br>
-   o [Chrome](https://chromedriver.chromium.org/downloads)<br>
-   o [Firefox](https://github.com/mozilla/geckodriver/releases)<br>
-   o [Edge](https://developer.microsoft.com/en-us/microsoft-edge/tools/webdriver/)<br>
-   o [Safari](https://webkit.org/blog/6900/webdriver-support-in-safari-10/)<br>
-4. After Downloding is completed, place the downloaded selenium executable file in ```C:/``` drive by creating a new folder and make sure to copy the path of that folder. 
-5. if you done with step 3, Now Open the [main.py](https://github.com/PavanTheHacker55/SBETET_MARKS_FETCHER/blob/main/main.py) file and make the following changes... <br>
-   🔰 At line 4 replace ```<your_browser_name>``` with your browser name (Note: all letters must be smallcase).<br>
-   🔰 At line 12 change the value to no.of students in your class (simply, strenght of your section), at line 11 don't modify the value 😅. </br>
-   🔰 At line 13 change the ```<your_branch_code>``` value accordingly, and at line 14 replace ```<batch_code>``` with your college code (batch code). </br>
-   🔰 At line 15 replace the ```<driver_path>``` with the path that you have copied in step 4.<br>
-   🔰 At line 16 change the subject codes according to your semester (don't change other values like PIN, TOTAL, STATUS). <br>
-   🔰 At line 24 replace ```<Browser_name>``` with Your Browser name (Note: First letter of Browser name must be capital).<br>
-   🔰 In your semester if you have only 5 thoery subjects and 4 practical subjects, you're good to go, continue with step 6.<br>
-   🛑Note: If you have more than 9 subjects in your semester you have to modify some URLs from line 62, and you have change the code accordingly, suppose if you have 10 subjects in your semester, already 9 subjects are added in the code now you have to create a new variable ```sub_10``` at line 63 and copy paste the same content from above line, but change number 13 to 14 in that URL. once you do that now you have to update the number at line 65 (change value in url from 14 to 15) and line 68 (change value in url from 15 to 16), and you have to update the line 71 too. 
-7. Now Save the main.py file.
-8. Then execute main.py file.
-Done!
+
+1. **Download Python and Selenium**:
+   - Download the latest version of Python.
+   - Install the Selenium library using pip:
+     ```python
+     pip install selenium
+     ```
+
+2. **Download WebDriver**:
+   - Depending on your browser, download the corresponding Selenium WebDriver from the following links:
+     - [Chrome](https://chromedriver.chromium.org/downloads)
+     - [Firefox](https://github.com/mozilla/geckodriver/releases)
+     - [Edge](https://developer.microsoft.com/en-us/microsoft-edge/tools/webdriver/)
+     - [Safari](https://webkit.org/blog/6900/webdriver-support-in-safari-10/)
+
+3. **Setup WebDriver**:
+   - After downloading, place the WebDriver executable in a new folder in the `C:/` drive.
+   - Note down the path of this folder.
+
+4. **Modify `main.py`**:
+   - Open the [main.py](https://github.com/PavanTheHacker55/SBETET_MARKS_FETCHER/blob/main/main.py) file.
+   - Make the following changes:
+     - Replace `<your_browser_name>` with your browser name (all lowercase).
+     - Adjust the number of students in your class at line 12.
+     - Update `<your_branch_code>` and `<batch_code>` as per your institution's codes.
+     - Replace `<driver_path>` with the path to the folder where you placed the WebDriver executable.
+     - Modify subject codes at line 16 according to your semester.
+     - Adjust URLs if you have more than 9 subjects in your semester.
+
+5. **Save and Execute**:
+   - Save the `main.py` file.
+   - Execute the `main.py` file.
+
+Done! 🎉
