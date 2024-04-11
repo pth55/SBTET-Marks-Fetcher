@@ -1,8 +1,13 @@
-# SBETET_MARKS_FETCHER
+# SBETET MARKS FETCHER
 
 ## About the Project
 
-This Program will automatically fetches all the results of a class, this program built with Selenium framework...
+The SBETET_MARKS_FETCHER is a Python program designed to streamline the process of fetching class results from the Andhra Pradesh State Board of Technical Education and Training (SBTET) website. It automates the retrieval of student data and stores it in a structured format for easy access and analysis.
+
+### Features:
+- **Automation**: Utilizes Selenium framework to automate the process of accessing the SBTET website, entering PIN numbers, and retrieving results.
+- **Data Extraction**: Extracts subject-wise marks, total marks, and pass/fail status for each student.
+- **CSV Output**: Saves the retrieved data into a CSV file for further processing and analysis.
 
 ## Steps to Use this Program
 
